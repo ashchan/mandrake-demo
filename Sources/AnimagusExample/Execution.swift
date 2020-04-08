@@ -1,6 +1,6 @@
 /// Ref: https://medium.com/nervosnetwork/whats-animagus-part-2-running-it-for-real-17a48608389d#6aaf
 
-func buildExecutionNode(queryCellNode: Ast_Value) -> Ast_Value {
+func buildExecutionNode(_ queryCellNode: Ast_Value) -> Ast_Value {
     let getCapacityFunction = buildAst(.getCapacity) {
         $0.children = [
             buildAst(.arg) { $0.u = 0 }
@@ -33,7 +33,7 @@ func buildExecutionNode(queryCellNode: Ast_Value) -> Ast_Value {
     }
 }
 
-func buildRoot(name: String, node: Ast_Value) -> Ast_Root {
+func buildRoot(_ name: String, _ node: Ast_Value) -> Ast_Root {
     var call = Ast_Call()
     call.name = name
     call.result = node
