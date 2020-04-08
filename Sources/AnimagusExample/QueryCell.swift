@@ -1,13 +1,6 @@
 /// Ref: https://medium.com/nervosnetwork/whats-animagus-part-2-running-it-for-real-17a48608389d#238d
 import Foundation
 
-func buildAst(_ t: Ast_Value.TypeEnum, builder: (inout Ast_Value) -> Void) -> Ast_Value {
-    var value = Ast_Value()
-    value.t = t
-    builder(&value)
-    return value
-}
-
 func buildQueryCellFunction() -> Ast_Value {
     let cell = buildAst(.arg) {
         $0.u = 0

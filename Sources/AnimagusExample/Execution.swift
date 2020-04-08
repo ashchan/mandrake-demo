@@ -1,62 +1,44 @@
 /// Ref: https://medium.com/nervosnetwork/whats-animagus-part-2-running-it-for-real-17a48608389d#6aaf
 
-/*
-require_relative "ast_pb"
+func buildExecutionNode(queryCellNode: Ast_Value) -> Ast_Value {
+    let getCapacityFunction = buildAst(.getCapacity) {
+        $0.children = [
+            buildAst(.arg) { $0.u = 0 }
+        ]
+    }
+    let capacities = buildAst(.map) {
+        $0.children = [
+            getCapacityFunction,
+            queryCellNode
+        ]
+    }
 
-def build_execution_node(query_cell_node)
-  get_capacity_function = Ast::Value::new(
-    t: Ast::Value::Type::GET_CAPACITY,
-    children: [
-      Ast::Value::new(
-        t: Ast::Value::Type::ARG,
-        u: 0
-      )
-    ]
-  )
-  capacities = Ast::Value::new(
-    t: Ast::Value::Type::MAP,
-    children: [
-      get_capacity_function,
-      query_cell_node
-    ]
-  )
+    let addBalanceFunction = buildAst(.add) {
+        $0.children = [
+            buildAst(.arg) { $0.u = 0 },
+            buildAst(.arg) { $0.u = 1 }
+        ]
+    }
 
-  add_balance_function = Ast::Value::new(
-    t: Ast::Value::Type::ADD,
-    children: [
-      Ast::Value::new(
-        t: Ast::Value::Type::ARG,
-        u: 0
-      ),
-      Ast::Value::new(
-        t: Ast::Value::Type::ARG,
-        u: 1
-      )
-    ]
-  )
-  initial_balance = Ast::Value::new(
-    t: Ast::Value::Type::UINT64,
-    u: 0
-  )
-  Ast::Value::new(
-    t: Ast::Value::Type::REDUCE,
-    children: [
-      add_balance_function,
-      initial_balance,
-      capacities
-    ]
-  )
-end
+    let initialBalance = buildAst(.uint64) {
+        $0.u = 0
+    }
 
-def build_root(name, node)
-  Ast::Root::new(
-    calls: [
-      Ast::Call::new(
-        name: name,
-        result: node
-      )
-    ]
-  )
-end
+    return buildAst(.reduce) {
+        $0.children = [
+            addBalanceFunction,
+            initialBalance,
+            capacities
+        ]
+    }
+}
 
-*/
+func buildRoot(name: String, node: Ast_Value) -> Ast_Root {
+    var call = Ast_Call()
+    call.name = name
+    call.result = node
+
+    var root = Ast_Root()
+    root.calls = [call]
+    return root
+}

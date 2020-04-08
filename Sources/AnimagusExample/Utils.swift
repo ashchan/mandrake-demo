@@ -1,5 +1,12 @@
 import Foundation
 
+func buildAst(_ t: Ast_Value.TypeEnum, builder: (inout Ast_Value) -> Void) -> Ast_Value {
+    var value = Ast_Value()
+    value.t = t
+    builder(&value)
+    return value
+}
+
 /*
 The following foundation extensions are from [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift).
 Copyright (C) 2014-2017 Marcin Krzyżanowski marcin@krzyzanowskim.com This software is provided 'as-is', without any express or implied warranty.
