@@ -1,0 +1,393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A5510762511B24900324316 /* Mandrake_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510752511B24900324316 /* Mandrake_DemoApp.swift */; };
+		1A5510782511B24900324316 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510772511B24900324316 /* ContentView.swift */; };
+		1A55107A2511B24A00324316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5510792511B24A00324316 /* Assets.xcassets */; };
+		1A55107D2511B24A00324316 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A55107C2511B24A00324316 /* Preview Assets.xcassets */; };
+		1A55108A2511B30900324316 /* generic.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510872511B30900324316 /* generic.grpc.swift */; };
+		1A55108B2511B30900324316 /* generic.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510882511B30900324316 /* generic.pb.swift */; };
+		1A55108C2511B30900324316 /* ast.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510892511B30900324316 /* ast.pb.swift */; };
+		1A5510922511B7CA00324316 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 1A5510912511B7CA00324316 /* GRPC */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A5510722511B24900324316 /* Mandrake Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mandrake Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A5510752511B24900324316 /* Mandrake_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mandrake_DemoApp.swift; sourceTree = "<group>"; };
+		1A5510772511B24900324316 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1A5510792511B24A00324316 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A55107C2511B24A00324316 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1A55107E2511B24A00324316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A55107F2511B24A00324316 /* Mandrake_Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mandrake_Demo.entitlements; sourceTree = "<group>"; };
+		1A5510872511B30900324316 /* generic.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = generic.grpc.swift; path = ../../Sources/AnimagusExample/generic.grpc.swift; sourceTree = "<group>"; };
+		1A5510882511B30900324316 /* generic.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = generic.pb.swift; path = ../../Sources/AnimagusExample/generic.pb.swift; sourceTree = "<group>"; };
+		1A5510892511B30900324316 /* ast.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ast.pb.swift; path = ../../Sources/AnimagusExample/ast.pb.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A55106F2511B24900324316 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A5510922511B7CA00324316 /* GRPC in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A5510692511B24900324316 = {
+			isa = PBXGroup;
+			children = (
+				1A5510742511B24900324316 /* Mandrake Demo */,
+				1A5510732511B24900324316 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A5510732511B24900324316 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A5510722511B24900324316 /* Mandrake Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A5510742511B24900324316 /* Mandrake Demo */ = {
+			isa = PBXGroup;
+			children = (
+				1A5510862511B2F000324316 /* Proto */,
+				1A5510852511B2CF00324316 /* Model */,
+				1A5510752511B24900324316 /* Mandrake_DemoApp.swift */,
+				1A5510772511B24900324316 /* ContentView.swift */,
+				1A5510792511B24A00324316 /* Assets.xcassets */,
+				1A55107E2511B24A00324316 /* Info.plist */,
+				1A55107F2511B24A00324316 /* Mandrake_Demo.entitlements */,
+				1A55107B2511B24A00324316 /* Preview Content */,
+			);
+			path = "Mandrake Demo";
+			sourceTree = "<group>";
+		};
+		1A55107B2511B24A00324316 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1A55107C2511B24A00324316 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1A5510852511B2CF00324316 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1A5510862511B2F000324316 /* Proto */ = {
+			isa = PBXGroup;
+			children = (
+				1A5510892511B30900324316 /* ast.pb.swift */,
+				1A5510872511B30900324316 /* generic.grpc.swift */,
+				1A5510882511B30900324316 /* generic.pb.swift */,
+			);
+			name = Proto;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A5510712511B24900324316 /* Mandrake Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A5510822511B24A00324316 /* Build configuration list for PBXNativeTarget "Mandrake Demo" */;
+			buildPhases = (
+				1A55106E2511B24900324316 /* Sources */,
+				1A55106F2511B24900324316 /* Frameworks */,
+				1A5510702511B24900324316 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mandrake Demo";
+			packageProductDependencies = (
+				1A5510912511B7CA00324316 /* GRPC */,
+			);
+			productName = "Mandrake Demo";
+			productReference = 1A5510722511B24900324316 /* Mandrake Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A55106A2511B24900324316 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					1A5510712511B24900324316 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 1A55106D2511B24900324316 /* Build configuration list for PBXProject "Mandrake Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A5510692511B24900324316;
+			packageReferences = (
+				1A5510902511B7CA00324316 /* XCRemoteSwiftPackageReference "grpc-swift" */,
+			);
+			productRefGroup = 1A5510732511B24900324316 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A5510712511B24900324316 /* Mandrake Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A5510702511B24900324316 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A55107D2511B24A00324316 /* Preview Assets.xcassets in Resources */,
+				1A55107A2511B24A00324316 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A55106E2511B24900324316 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A55108C2511B30900324316 /* ast.pb.swift in Sources */,
+				1A55108B2511B30900324316 /* generic.pb.swift in Sources */,
+				1A5510782511B24900324316 /* ContentView.swift in Sources */,
+				1A55108A2511B30900324316 /* generic.grpc.swift in Sources */,
+				1A5510762511B24900324316 /* Mandrake_DemoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1A5510802511B24A00324316 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1A5510812511B24A00324316 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		1A5510832511B24A00324316 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mandrake Demo/Mandrake_Demo.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Mandrake Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = 9A3W22M8YB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Mandrake Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ashchan.Mandrake-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1A5510842511B24A00324316 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mandrake Demo/Mandrake_Demo.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Mandrake Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = 9A3W22M8YB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Mandrake Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ashchan.Mandrake-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A55106D2511B24900324316 /* Build configuration list for PBXProject "Mandrake Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A5510802511B24A00324316 /* Debug */,
+				1A5510812511B24A00324316 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A5510822511B24A00324316 /* Build configuration list for PBXNativeTarget "Mandrake Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A5510832511B24A00324316 /* Debug */,
+				1A5510842511B24A00324316 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A5510902511B7CA00324316 /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = "1.0.0-alpha.19";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A5510912511B7CA00324316 /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A5510902511B7CA00324316 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1A55106A2511B24900324316 /* Project object */;
+}
