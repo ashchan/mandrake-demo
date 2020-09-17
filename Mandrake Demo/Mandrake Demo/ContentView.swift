@@ -12,9 +12,7 @@ struct ContentView: View {
         Text("Hello, world!")
             .padding()
             .onAppear {
-                DispatchQueue.global(qos: .userInitiated).async {
-                    Animagus().test()
-                }
+                Animagus().test()
             }
     }
 }

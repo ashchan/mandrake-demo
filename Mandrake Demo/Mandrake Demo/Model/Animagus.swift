@@ -17,17 +17,45 @@ class Animagus {
         return Generic_GenericServiceClient(channel: channel)
     }()
 
-    func test() {
+    func runDepositBalance() {
         var request = Generic_GenericParams()
+        request.name = "deposit balance"
+        let response = try! client.call(request).response.wait()
+        print(response)
+    }
 
-        request.name = "dao deposit"
-        do {
-            let response = try client.call(request).response.wait()
-            print(response)
-        } catch {
-            print(error)
+    func runWithdrawalBalance() {
+        var request = Generic_GenericParams()
+        request.name = "withdrawal balance"
+        let response = try! client.call(request).response.wait()
+        print(response)
+    }
+
+    func runWithdrawalCells() {
+        var request = Generic_GenericParams()
+        request.name = "withdrawal cells"
+        let response = try! client.call(request).response.wait()
+        let cells = response.children.map { value in
+            Cell.fromAstValue(value)
+        }
+        print(cells)
+    }
+
+    func runWithdrawalStream() {
+        var request = Generic_GenericParams()
+        request.name = "withdrawal"
+        let stream = client.stream(request) { value in
+            print(value)
+        }
+        stream.status.whenSuccess { (s) in
+            print(s)
         }
 
+        _ = try! stream.status.wait()
+    }
+
+    func runUnlockStream() {
+        var request = Generic_GenericParams()
         request.name = "unlock"
         let stream = client.stream(request) { value in
             print(value)
@@ -37,5 +65,15 @@ class Animagus {
         }
 
         _ = try! stream.status.wait()
+    }
+
+    func test() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.runDepositBalance()
+            self.runWithdrawalBalance()
+            self.runWithdrawalCells()
+            self.runWithdrawalStream()
+            self.runUnlockStream()
+        }
     }
 }

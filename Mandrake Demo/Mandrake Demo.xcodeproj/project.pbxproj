@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A4D10302511F7200035D1F5 /* Animagus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D102F2511F7200035D1F5 /* Animagus.swift */; };
+		1A4D1032251359200035D1F5 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D1031251359200035D1F5 /* Cell.swift */; };
+		1A4D10342513607E0035D1F5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D10332513607E0035D1F5 /* Utils.swift */; };
 		1A5510762511B24900324316 /* Mandrake_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510752511B24900324316 /* Mandrake_DemoApp.swift */; };
 		1A5510782511B24900324316 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510772511B24900324316 /* ContentView.swift */; };
 		1A55107A2511B24A00324316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5510792511B24A00324316 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		1A4D102F2511F7200035D1F5 /* Animagus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animagus.swift; sourceTree = "<group>"; };
+		1A4D1031251359200035D1F5 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		1A4D10332513607E0035D1F5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../../Sources/AnimagusExample/Utils.swift; sourceTree = "<group>"; };
 		1A5510722511B24900324316 /* Mandrake Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mandrake Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5510752511B24900324316 /* Mandrake_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mandrake_DemoApp.swift; sourceTree = "<group>"; };
 		1A5510772511B24900324316 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 		1A5510742511B24900324316 /* Mandrake Demo */ = {
 			isa = PBXGroup;
 			children = (
+				1A4D10332513607E0035D1F5 /* Utils.swift */,
 				1A5510862511B2F000324316 /* Proto */,
 				1A5510852511B2CF00324316 /* Model */,
 				1A5510752511B24900324316 /* Mandrake_DemoApp.swift */,
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				1A4D102F2511F7200035D1F5 /* Animagus.swift */,
+				1A4D1031251359200035D1F5 /* Cell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,10 +184,12 @@
 			files = (
 				1A55108C2511B30900324316 /* ast.pb.swift in Sources */,
 				1A55108B2511B30900324316 /* generic.pb.swift in Sources */,
+				1A4D1032251359200035D1F5 /* Cell.swift in Sources */,
 				1A5510782511B24900324316 /* ContentView.swift in Sources */,
 				1A55108A2511B30900324316 /* generic.grpc.swift in Sources */,
 				1A5510762511B24900324316 /* Mandrake_DemoApp.swift in Sources */,
 				1A4D10302511F7200035D1F5 /* Animagus.swift in Sources */,
+				1A4D10342513607E0035D1F5 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
