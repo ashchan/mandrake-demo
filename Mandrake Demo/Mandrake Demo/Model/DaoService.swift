@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 import NIO
 import GRPC
 
@@ -20,7 +21,17 @@ class DaoService: ObservableObject {
     @Published var balance: UInt64 = 0
     @Published var withdrawalCells: [Cell] = []
 
+    // Change when deposit/unlock events are received
+    private let subject = PassthroughSubject<TimeInterval, Never>()
+    private var cancellable: AnyCancellable?
+
     func start() {
+        cancellable = subject
+            .debounce(for: .seconds(5), scheduler: RunLoop.main)
+            .sink { _ in
+                self.fetchBalance()
+            }
+
         fetchBalance()
         fetchWithdrawalCells()
         listenDepositEvents()
@@ -62,8 +73,7 @@ private extension DaoService {
             let stream = self.client.stream(request) { value in
                 print("Deposit")
                 DispatchQueue.main.async {
-                    //self.fetchBalance()
-                    self.balance += Cell.fromAstValue(value).balance
+                    self.subject.send(Date().timeIntervalSince1970)
                 }
             }
 
@@ -90,8 +100,7 @@ private extension DaoService {
             let stream = self.client.stream(request) { value in
                 print("Unlock")
                 DispatchQueue.main.async {
-                    //self.fetchBalance()
-                    self.balance -= Cell.fromAstValue(value).balance
+                    self.subject.send(Date().timeIntervalSince1970)
                 }
             }
 
