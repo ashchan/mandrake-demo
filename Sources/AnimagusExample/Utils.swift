@@ -88,3 +88,19 @@ public extension Data {
       self.bytes.toHexString()
     }
 }
+
+extension UInt64 {
+    static var formatter: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.usesGroupingSeparator = true
+        numberFormatter.minimumFractionDigits = 2
+        numberFormatter.maximumFractionDigits = 2
+        return numberFormatter
+    }()
+
+    var formatted: String {
+        let v = Decimal(self / 100_000_000)
+        return Self.formatter.string(for: v)!
+    }
+}

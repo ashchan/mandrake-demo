@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A4D10302511F7200035D1F5 /* Animagus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D102F2511F7200035D1F5 /* Animagus.swift */; };
+		1A4D10302511F7200035D1F5 /* DaoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D102F2511F7200035D1F5 /* DaoService.swift */; };
 		1A4D1032251359200035D1F5 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D1031251359200035D1F5 /* Cell.swift */; };
 		1A4D10342513607E0035D1F5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4D10332513607E0035D1F5 /* Utils.swift */; };
-		1A5510762511B24900324316 /* Mandrake_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510752511B24900324316 /* Mandrake_DemoApp.swift */; };
-		1A5510782511B24900324316 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510772511B24900324316 /* ContentView.swift */; };
+		1A5510762511B24900324316 /* MandrakeDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510752511B24900324316 /* MandrakeDemo.swift */; };
 		1A55107A2511B24A00324316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5510792511B24A00324316 /* Assets.xcassets */; };
 		1A55107D2511B24A00324316 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A55107C2511B24A00324316 /* Preview Assets.xcassets */; };
 		1A55108A2511B30900324316 /* generic.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510872511B30900324316 /* generic.grpc.swift */; };
 		1A55108B2511B30900324316 /* generic.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510882511B30900324316 /* generic.pb.swift */; };
 		1A55108C2511B30900324316 /* ast.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510892511B30900324316 /* ast.pb.swift */; };
 		1A5510922511B7CA00324316 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 1A5510912511B7CA00324316 /* GRPC */; };
+		1ACB5B7125149C8C00CFBA08 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5B7025149C8C00CFBA08 /* Balance.swift */; };
+		1ACB5B7525149CA200CFBA08 /* Unlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5B7425149CA200CFBA08 /* Unlock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A4D102F2511F7200035D1F5 /* Animagus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animagus.swift; sourceTree = "<group>"; };
+		1A4D102F2511F7200035D1F5 /* DaoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaoService.swift; sourceTree = "<group>"; };
 		1A4D1031251359200035D1F5 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1A4D10332513607E0035D1F5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../../Sources/AnimagusExample/Utils.swift; sourceTree = "<group>"; };
 		1A5510722511B24900324316 /* Mandrake Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mandrake Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A5510752511B24900324316 /* Mandrake_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mandrake_DemoApp.swift; sourceTree = "<group>"; };
-		1A5510772511B24900324316 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1A5510752511B24900324316 /* MandrakeDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandrakeDemo.swift; sourceTree = "<group>"; };
 		1A5510792511B24A00324316 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A55107C2511B24A00324316 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A55107E2511B24A00324316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +34,8 @@
 		1A5510872511B30900324316 /* generic.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = generic.grpc.swift; path = ../../Sources/AnimagusExample/generic.grpc.swift; sourceTree = "<group>"; };
 		1A5510882511B30900324316 /* generic.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = generic.pb.swift; path = ../../Sources/AnimagusExample/generic.pb.swift; sourceTree = "<group>"; };
 		1A5510892511B30900324316 /* ast.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ast.pb.swift; path = ../../Sources/AnimagusExample/ast.pb.swift; sourceTree = "<group>"; };
+		1ACB5B7025149C8C00CFBA08 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		1ACB5B7425149CA200CFBA08 /* Unlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unlock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +72,9 @@
 				1A4D10332513607E0035D1F5 /* Utils.swift */,
 				1A5510862511B2F000324316 /* Proto */,
 				1A5510852511B2CF00324316 /* Model */,
-				1A5510752511B24900324316 /* Mandrake_DemoApp.swift */,
-				1A5510772511B24900324316 /* ContentView.swift */,
+				1ACB5B692514998F00CFBA08 /* Balance */,
+				1ACB5B6A251499AB00CFBA08 /* Unlock */,
+				1A5510752511B24900324316 /* MandrakeDemo.swift */,
 				1A5510792511B24A00324316 /* Assets.xcassets */,
 				1A55107E2511B24A00324316 /* Info.plist */,
 				1A55107F2511B24A00324316 /* Mandrake_Demo.entitlements */,
@@ -91,7 +94,7 @@
 		1A5510852511B2CF00324316 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1A4D102F2511F7200035D1F5 /* Animagus.swift */,
+				1A4D102F2511F7200035D1F5 /* DaoService.swift */,
 				1A4D1031251359200035D1F5 /* Cell.swift */,
 			);
 			path = Model;
@@ -105,6 +108,22 @@
 				1A5510882511B30900324316 /* generic.pb.swift */,
 			);
 			name = Proto;
+			sourceTree = "<group>";
+		};
+		1ACB5B692514998F00CFBA08 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				1ACB5B7025149C8C00CFBA08 /* Balance.swift */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		1ACB5B6A251499AB00CFBA08 /* Unlock */ = {
+			isa = PBXGroup;
+			children = (
+				1ACB5B7425149CA200CFBA08 /* Unlock.swift */,
+			);
+			path = Unlock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +156,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					1A5510712511B24900324316 = {
 						CreatedOnToolsVersion = 12.0;
@@ -185,10 +204,11 @@
 				1A55108C2511B30900324316 /* ast.pb.swift in Sources */,
 				1A55108B2511B30900324316 /* generic.pb.swift in Sources */,
 				1A4D1032251359200035D1F5 /* Cell.swift in Sources */,
-				1A5510782511B24900324316 /* ContentView.swift in Sources */,
+				1ACB5B7525149CA200CFBA08 /* Unlock.swift in Sources */,
+				1ACB5B7125149C8C00CFBA08 /* Balance.swift in Sources */,
 				1A55108A2511B30900324316 /* generic.grpc.swift in Sources */,
-				1A5510762511B24900324316 /* Mandrake_DemoApp.swift in Sources */,
-				1A4D10302511F7200035D1F5 /* Animagus.swift in Sources */,
+				1A5510762511B24900324316 /* MandrakeDemo.swift in Sources */,
+				1A4D10302511F7200035D1F5 /* DaoService.swift in Sources */,
 				1A4D10342513607E0035D1F5 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +337,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Mandrake Demo/Mandrake_Demo.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Mandrake Demo/Preview Content\"";
@@ -341,6 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Mandrake Demo/Mandrake_Demo.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Mandrake Demo/Preview Content\"";

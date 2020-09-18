@@ -9,7 +9,7 @@ import Foundation
 import NIO
 import GRPC
 
-class Animagus {
+class DaoService {
     var client: Generic_GenericServiceClient = {
         let group = MultiThreadedEventLoopGroup(numberOfThreads: 1)
         let channel = ClientConnection.insecure(group: group)
@@ -24,13 +24,6 @@ class Animagus {
         print(response)
     }
 
-    func runWithdrawalBalance() {
-        var request = Generic_GenericParams()
-        request.name = "withdrawal balance"
-        let response = try! client.call(request).response.wait()
-        print(response)
-    }
-
     func runWithdrawalCells() {
         var request = Generic_GenericParams()
         request.name = "withdrawal cells"
@@ -41,14 +34,12 @@ class Animagus {
         print(cells)
     }
 
-    func runWithdrawalStream() {
+    func runChangeStream() {
         var request = Generic_GenericParams()
-        request.name = "withdrawal"
+        request.name = "change"
         let stream = client.stream(request) { value in
+            print("DAO change event")
             print(value)
-        }
-        stream.status.whenSuccess { (s) in
-            print(s)
         }
 
         _ = try! stream.status.wait()
@@ -58,10 +49,8 @@ class Animagus {
         var request = Generic_GenericParams()
         request.name = "unlock"
         let stream = client.stream(request) { value in
+            print("DAO unlock event")
             print(value)
-        }
-        stream.status.whenSuccess { (s) in
-            print(s)
         }
 
         _ = try! stream.status.wait()
@@ -70,9 +59,8 @@ class Animagus {
     func test() {
         DispatchQueue.global(qos: .userInitiated).async {
             self.runDepositBalance()
-            self.runWithdrawalBalance()
             self.runWithdrawalCells()
-            self.runWithdrawalStream()
+            self.runChangeStream()
             self.runUnlockStream()
         }
     }
