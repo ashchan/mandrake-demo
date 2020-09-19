@@ -20,17 +20,27 @@ class DaoService: ObservableObject {
 
     @Published var balance: UInt64 = 0
     @Published var withdrawalCells: [Cell] = []
+    @Published var balanceHistory: [UInt64] = []
 
     // Change when deposit/unlock events are received
     private let subject = PassthroughSubject<TimeInterval, Never>()
-    private var cancellable: AnyCancellable?
+    private var cancellables: [AnyCancellable] = []
 
     func start() {
-        cancellable = subject
-            .throttle(for: .seconds(5), scheduler: RunLoop.main, latest: true)
-            .sink { _ in
-                self.fetchBalance()
-            }
+        cancellables.append(
+            subject
+                .throttle(for: .seconds(2), scheduler: RunLoop.main, latest: true)
+                .sink { _ in
+                    self.fetchBalance()
+                }
+        )
+        cancellables.append(
+            subject
+                .throttle(for: .seconds(2), scheduler: RunLoop.main, latest: true)
+                .sink { _ in
+                    self.recordHistory()
+                }
+        )
 
         fetchBalance()
         fetchWithdrawalCells()
@@ -41,6 +51,10 @@ class DaoService: ObservableObject {
 }
 
 private extension DaoService {
+    func recordHistory() {
+        balanceHistory.append(balance)
+    }
+
     func fetchBalance() {
         DispatchQueue.global(qos: .userInitiated).async {
             var request = Generic_GenericParams()

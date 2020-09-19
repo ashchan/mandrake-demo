@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Balance: View {
     @EnvironmentObject private var dao: DaoService
+    private let base = UInt64(1_00_000_000) * UInt64(15_000_000_000)
 
     var body: some View {
         Group {
@@ -18,6 +19,25 @@ struct Balance: View {
                 Text(dao.balance.formatted)
                     .font(.system(size: 20, weight: .bold, design: .monospaced))
             }
+            .padding(20)
+
+            Group {
+                ScrollView(.horizontal, showsIndicators: true) {
+                    HStack(alignment: .bottom, spacing: 2) {
+                        Rectangle()
+                            .fill(Color.white)
+                            .frame(width: 1, height: 600)
+                        ForEach(dao.balanceHistory, id: \.self) { b in
+                            Rectangle()
+                                .fill(Color.green)
+                                .frame(width: 10, height: 600 * CGFloat(b) / CGFloat(base))
+                        }
+                    }
+                    .background(Color.white)
+                }
+                .frame(height: 600)
+            }
+            .background(Color.white)
         }
         .navigationTitle("Deposit")
     }
