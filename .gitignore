@@ -1,3 +1,10 @@
 .build/
 .swiftpm
 Package.resolved
+*.xcuserstate
+project.xcworkspace
+xcuserdata
+UserInterfaceState.xcuserstate
+project.xcworkspace/
+xcuserdata/
+UserInterface.xcuserstate
