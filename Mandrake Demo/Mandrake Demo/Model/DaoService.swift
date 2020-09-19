@@ -27,7 +27,7 @@ class DaoService: ObservableObject {
 
     func start() {
         cancellable = subject
-            .debounce(for: .seconds(5), scheduler: RunLoop.main)
+            .throttle(for: .seconds(5), scheduler: RunLoop.main, latest: true)
             .sink { _ in
                 self.fetchBalance()
             }
