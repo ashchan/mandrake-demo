@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Balance: View {
     @EnvironmentObject private var dao: DaoService
-    private let base = UInt64(1_00_000_000) * UInt64(15_000_000_000)
+    private let base = UInt64(1_00_000_000) * UInt64(10_000_000_000)
 
     var body: some View {
         Group {
@@ -24,16 +24,16 @@ struct Balance: View {
                     HStack(alignment: .bottom, spacing: 2) {
                         Rectangle()
                             .fill(Color.white)
-                            .frame(width: 1, height: 600)
+                            .frame(width: 1, height: 1000)
                         ForEach(dao.balanceHistory, id: \.self) { b in
                             Rectangle()
                                 .fill(Color.green)
-                                .frame(width: 10, height: 600 * CGFloat(b) / CGFloat(base))
+                                .frame(width: 10, height: 1000 * CGFloat(b) / CGFloat(base))
                         }
                     }
                     .background(Color.white)
                 }
-                .frame(height: 600)
+                .frame(height: 1000)
             }
             .background(Color.white)
         }
