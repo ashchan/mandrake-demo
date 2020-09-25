@@ -18,7 +18,7 @@
 		1A55108C2511B30900324316 /* ast.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5510892511B30900324316 /* ast.pb.swift */; };
 		1A5510922511B7CA00324316 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 1A5510912511B7CA00324316 /* GRPC */; };
 		1ACB5B7125149C8C00CFBA08 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5B7025149C8C00CFBA08 /* Balance.swift */; };
-		1ACB5B7525149CA200CFBA08 /* Unlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5B7425149CA200CFBA08 /* Unlock.swift */; };
+		1ACB5B7525149CA200CFBA08 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5B7425149CA200CFBA08 /* Events.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		1A5510882511B30900324316 /* generic.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = generic.pb.swift; path = ../../Sources/AnimagusExample/generic.pb.swift; sourceTree = "<group>"; };
 		1A5510892511B30900324316 /* ast.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ast.pb.swift; path = ../../Sources/AnimagusExample/ast.pb.swift; sourceTree = "<group>"; };
 		1ACB5B7025149C8C00CFBA08 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
-		1ACB5B7425149CA200CFBA08 /* Unlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unlock.swift; sourceTree = "<group>"; };
+		1ACB5B7425149CA200CFBA08 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 				1A5510862511B2F000324316 /* Proto */,
 				1A5510852511B2CF00324316 /* Model */,
 				1ACB5B692514998F00CFBA08 /* Balance */,
-				1ACB5B6A251499AB00CFBA08 /* Unlock */,
+				1ACB5B6A251499AB00CFBA08 /* Events */,
 				1A5510752511B24900324316 /* MandrakeDemo.swift */,
 				1A5510792511B24A00324316 /* Assets.xcassets */,
 				1A55107E2511B24A00324316 /* Info.plist */,
@@ -118,12 +118,12 @@
 			path = Balance;
 			sourceTree = "<group>";
 		};
-		1ACB5B6A251499AB00CFBA08 /* Unlock */ = {
+		1ACB5B6A251499AB00CFBA08 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				1ACB5B7425149CA200CFBA08 /* Unlock.swift */,
+				1ACB5B7425149CA200CFBA08 /* Events.swift */,
 			);
-			path = Unlock;
+			path = Events;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +204,7 @@
 				1A55108C2511B30900324316 /* ast.pb.swift in Sources */,
 				1A55108B2511B30900324316 /* generic.pb.swift in Sources */,
 				1A4D1032251359200035D1F5 /* Cell.swift in Sources */,
-				1ACB5B7525149CA200CFBA08 /* Unlock.swift in Sources */,
+				1ACB5B7525149CA200CFBA08 /* Events.swift in Sources */,
 				1ACB5B7125149C8C00CFBA08 /* Balance.swift in Sources */,
 				1A55108A2511B30900324316 /* generic.grpc.swift in Sources */,
 				1A5510762511B24900324316 /* MandrakeDemo.swift in Sources */,

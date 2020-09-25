@@ -12,6 +12,10 @@ struct Cell {
     var txHash: String
     var index: UInt64
 
+    var id: String {
+        txHash + index.description
+    }
+
     static func fromAstValue(_ value: Ast_Value) -> Cell {
         let balance = value.children.first!.u
         let outPoint = value.children.last!

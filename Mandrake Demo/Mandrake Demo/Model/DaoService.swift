@@ -19,8 +19,11 @@ class DaoService: ObservableObject {
     }()
 
     @Published var balance: UInt64 = 0
-    @Published var withdrawalCells: [Cell] = []
     @Published var balanceHistory: [UInt64] = []
+
+    @Published var depositEvents: [Cell] = []
+    @Published var withdrawEvents: [Cell] = []
+    @Published var unlockEvents: [Cell] = []
 
     // Change when deposit/unlock events are received
     private let subject = PassthroughSubject<TimeInterval, Never>()
@@ -43,7 +46,6 @@ class DaoService: ObservableObject {
         )
 
         fetchBalance()
-        fetchWithdrawalCells()
         listenDepositEvents()
         listenWithdrawEvents()
         listenUnlockEvents()
@@ -66,27 +68,15 @@ private extension DaoService {
         }
     }
 
-    func fetchWithdrawalCells() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            var request = Generic_GenericParams()
-            request.name = "withdrawal cells"
-            let response = try! self.client.call(request).response.wait()
-            let cells = response.children.map { value in
-                Cell.fromAstValue(value)
-            }
-            DispatchQueue.main.async {
-                self.withdrawalCells = cells
-            }
-        }
-    }
-
     func listenDepositEvents() {
         DispatchQueue.global(qos: .userInitiated).async {
             var request = Generic_GenericParams()
             request.name = "deposit"
             let stream = self.client.stream(request) { value in
-                print("Deposit")
+                let cell = Cell.fromAstValue(value)
+                print("Deposit \(cell.txHash)")
                 DispatchQueue.main.async {
+                    self.depositEvents.insert(cell, at: 0)
                     self.subject.send(Date().timeIntervalSince1970)
                 }
             }
@@ -100,7 +90,11 @@ private extension DaoService {
             var request = Generic_GenericParams()
             request.name = "withdraw"
             let stream = self.client.stream(request) { value in
-                print("Withdraw")
+                let cell = Cell.fromAstValue(value)
+                print("Withdraw \(cell.txHash)")
+                DispatchQueue.main.async {
+                    self.withdrawEvents.insert(cell, at: 0)
+                }
             }
 
             _ = try! stream.status.wait()
@@ -112,8 +106,10 @@ private extension DaoService {
             var request = Generic_GenericParams()
             request.name = "unlock"
             let stream = self.client.stream(request) { value in
-                print("Unlock")
+                let cell = Cell.fromAstValue(value)
+                print("Unlock \(cell.txHash)")
                 DispatchQueue.main.async {
+                    self.unlockEvents.insert(cell, at: 0)
                     self.subject.send(Date().timeIntervalSince1970)
                 }
             }

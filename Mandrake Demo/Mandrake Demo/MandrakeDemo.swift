@@ -43,15 +43,15 @@ struct ContentView: View {
     var sidebar: some View {
         List(selection: $selection) {
             NavigationLink(destination: Balance()) {
-                Label("Deposit", systemImage: "banknote")
+                Label("DAO Deposit", systemImage: "banknote")
             }
             .accessibility(label: Text("DAO Deposit"))
             .tag(NavigationItem.balance)
 
-            NavigationLink(destination: Unlock()) {
-                Label("Withdrawal", systemImage: "gauge.badge.minus")
+            NavigationLink(destination: Events()) {
+                Label("DAO Events", systemImage: "gauge.badge.minus")
             }
-            .accessibility(label: Text("DAO Unlock"))
+            .accessibility(label: Text("DAO Events"))
             .tag(NavigationItem.unlock)
         }
         .frame(minWidth: 120)

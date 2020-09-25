@@ -14,10 +14,8 @@ struct Balance: View {
     var body: some View {
         Group {
             HStack {
-                Text("DAO Deposit: ")
-                    .font(.system(size: 20))
                 Text(dao.balance.formatted)
-                    .font(.system(size: 20, weight: .bold, design: .monospaced))
+                    .font(.system(size: 26, weight: .bold, design: .monospaced))
             }
             .padding(20)
 
@@ -39,7 +37,7 @@ struct Balance: View {
             }
             .background(Color.white)
         }
-        .navigationTitle("Deposit")
+        .navigationTitle("DAO Deposit")
     }
 }
 
