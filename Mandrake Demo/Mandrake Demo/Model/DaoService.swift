@@ -30,16 +30,17 @@ class DaoService: ObservableObject {
     private var cancellables: [AnyCancellable] = []
 
     func start() {
+        let interval = TimeInterval(0.5)
         cancellables.append(
             subject
-                .throttle(for: .seconds(2), scheduler: RunLoop.main, latest: true)
+                .throttle(for: .seconds(interval), scheduler: RunLoop.main, latest: true)
                 .sink { _ in
                     self.fetchBalance()
                 }
         )
         cancellables.append(
             subject
-                .throttle(for: .seconds(2), scheduler: RunLoop.main, latest: true)
+                .throttle(for: .seconds(interval), scheduler: RunLoop.main, latest: true)
                 .sink { _ in
                     self.recordHistory()
                 }
@@ -60,7 +61,7 @@ private extension DaoService {
     func fetchBalance() {
         DispatchQueue.global(qos: .userInitiated).async {
             var request = Generic_GenericParams()
-            request.name = "deposit balance"
+            request.name = "balance"
             let response = try! self.client.call(request).response.wait()
             DispatchQueue.main.async {
                 self.balance = response.u
