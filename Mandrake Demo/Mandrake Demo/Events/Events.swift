@@ -57,7 +57,7 @@ struct Row: View {
                 Text(cell.balance.formatted)
                     .font(.system(size: 20, weight: .bold, design: .monospaced))
                 Text(cell.txHash)
-                    .font(.system(size: 16, weight: .regular, design: .monospaced))
+                    .font(.system(size: 12, weight: .regular, design: .monospaced))
         }
         .onTapGesture(count: 2, perform: {
             let url = URL(string: "https://explorer.nervos.org/transaction/\(cell.txHash)")!

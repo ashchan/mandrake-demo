@@ -136,7 +136,7 @@ private extension DaoService {
 extension DaoService {
     static var example: DaoService = {
         let dao = DaoService()
-        let decimal = UInt64(1_00_000_00)
+        let decimal = UInt64(1_00_000_000)
         dao.balance = 6_000_000_000 * decimal
         dao.balanceHistory = [
             4_000_000_000 * decimal,
