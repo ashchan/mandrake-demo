@@ -43,6 +43,6 @@ struct Balance: View {
 
 struct Balance_Previews: PreviewProvider {
     static var previews: some View {
-        Balance()
+        Balance().environmentObject(DaoService.example)
     }
 }

@@ -16,6 +16,8 @@ struct Events: View {
                 Text("Deposit")
                     .font(.headline)
                     .padding(10)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.green)
                 List(dao.depositEvents, id: \.id) { event in
                     Row(cell: event)
                 }
@@ -25,6 +27,8 @@ struct Events: View {
                 Text("Withdraw")
                     .font(.headline)
                     .padding(10)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
                 List(dao.withdrawEvents, id: \.id) { event in
                     Row(cell: event)
                 }
@@ -34,6 +38,8 @@ struct Events: View {
                 Text("Unlock")
                     .font(.headline)
                     .padding(10)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.red)
                 List(dao.unlockEvents, id: \.id) { event in
                     Row(cell: event)
                 }
@@ -63,6 +69,6 @@ struct Row: View {
 
 struct Unlock_Previews: PreviewProvider {
     static var previews: some View {
-        Events()
+        Events().environmentObject(DaoService.example)
     }
 }

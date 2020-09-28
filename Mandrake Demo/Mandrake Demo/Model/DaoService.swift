@@ -132,3 +132,30 @@ private extension DaoService {
         }
     }
 }
+
+extension DaoService {
+    static var example: DaoService = {
+        let dao = DaoService()
+        let decimal = UInt64(1_00_000_00)
+        dao.balance = 6_000_000_000 * decimal
+        dao.balanceHistory = [
+            4_000_000_000 * decimal,
+            5_000_000_000 * decimal,
+            6_000_000_000 * decimal,
+            4_000_000_000 * decimal,
+            5_000_000_000 * decimal,
+        ]
+        dao.depositEvents = [
+            Cell(balance: 1_000 * decimal, txHash: "0xabcd...eeff", index: 0),
+            Cell(balance: 2_000 * decimal, txHash: "0xabcd...ffff", index: 0),
+            Cell(balance: 3_000 * decimal, txHash: "0xabcd...eeee", index: 0)
+        ]
+        dao.withdrawEvents = [
+            Cell(balance: 2_000 * decimal, txHash: "0xabcd...eeff", index: 0)
+        ]
+        dao.unlockEvents = [
+            Cell(balance: 3_000 * decimal, txHash: "0xabcd...eeff", index: 0)
+        ]
+        return dao
+    }()
+}
