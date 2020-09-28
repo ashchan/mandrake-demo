@@ -28,9 +28,10 @@ class DaoService: ObservableObject {
     // Change when deposit/unlock events are received
     private let subject = PassthroughSubject<TimeInterval, Never>()
     private var cancellables: [AnyCancellable] = []
+    private let listLimit = 30
 
     func start() {
-        let interval = TimeInterval(0.5)
+        let interval = TimeInterval(2)
         cancellables.append(
             subject
                 .throttle(for: .seconds(interval), scheduler: RunLoop.main, latest: true)
@@ -78,6 +79,10 @@ private extension DaoService {
                 print("Deposit \(cell.txHash)")
                 DispatchQueue.main.async {
                     self.depositEvents.insert(cell, at: 0)
+                    let count = self.depositEvents.count
+                    if (count > self.listLimit) {
+                        self.depositEvents.removeLast(count - self.listLimit)
+                    }
                     self.subject.send(Date().timeIntervalSince1970)
                 }
             }
@@ -95,6 +100,10 @@ private extension DaoService {
                 print("Withdraw \(cell.txHash)")
                 DispatchQueue.main.async {
                     self.withdrawEvents.insert(cell, at: 0)
+                    let count = self.withdrawEvents.count
+                    if (count > self.listLimit) {
+                        self.withdrawEvents.removeLast(count - self.listLimit)
+                    }
                 }
             }
 
@@ -111,6 +120,10 @@ private extension DaoService {
                 print("Unlock \(cell.txHash)")
                 DispatchQueue.main.async {
                     self.unlockEvents.insert(cell, at: 0)
+                    let count = self.unlockEvents.count
+                    if (count > self.listLimit) {
+                        self.unlockEvents.removeLast(count - self.listLimit)
+                    }
                     self.subject.send(Date().timeIntervalSince1970)
                 }
             }
